@@ -1,0 +1,3 @@
+.login-container{width:40%;margin:10% auto 0;}
+.common-button,.common-button:hover{background: #1bb394;border:1px solid #1bb394}
+.common-button.focus, .common-button:focus{box-shadow: none}
