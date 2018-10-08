@@ -1,6 +1,6 @@
 body{background: #f3f3f4;color:#555}
 .login-container{width:40%;margin:10% auto 0;}
-.common-button,.common-button:hover{background: #1bb394;border:1px solid #1bb394}
+.common-button,.common-button:hover,.common-button:active,.btn-primary.common-button:not(:disabled):not(.disabled).active, .btn-primary.common-button:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle{background: #1bb394;border:1px solid #1bb394}
 .common-button.focus, .common-button:focus{box-shadow: none}
 .no-padding{padding:0}
 .no-margin{margin:0}
@@ -19,8 +19,8 @@ body{background: #f3f3f4;color:#555}
 }
 
 #sidebar.active {
-    min-width: 80px;
-    max-width: 80px;
+    min-width: 70px;
+    max-width: 70px;
     text-align: center;
 }
 
@@ -61,7 +61,11 @@ a[data-toggle="collapse"] {
 .pointer-circle{width:10px; height:10px;border-radius:50%;background:#ccc;display:inline-block;margin-right:5px }
 .badge-container span{padding:5px 8px;margin-bottom: 5px}
 .tag{background: #fff;border:1px solid #ccc}
-.inbox-container{border:1px solid #ccc;background: #fff}
+.inbox-container{border:1px solid #e7eaec;background: #fff; padding:10px}
+.custom-input{width:300px;}
+.left-menu-list i{padding:15px 0}
+.left-menu-list li{cursor: pointer;border-left:4px solid #2f4050}
+.left-menu-list li.active,.left-menu-list li:hover{border-left:4px solid #19aa8d;background: #293846}
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
