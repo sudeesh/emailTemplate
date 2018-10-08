@@ -52,11 +52,11 @@
                 <span>Search for something here...</span>
             </div>
             <div class="col-md-8 text-right">
-                <i class="fa fa-envelope" aria-hidden="true">
-                    <span class="badge badge-light">4</span>
+                <i class="fa fa-envelope position-relative top-icon" aria-hidden="true">
+                    <span class="badge badge-light top-icon-badge bg-warning">16</span>
                 </i>
-                <i class="fa fa-bell" aria-hidden="true">
-                    <span class="badge badge-light">4</span>
+                <i class="fa fa-bell position-relative top-icon" aria-hidden="true">
+                    <span class="badge badge-light top-icon-badge bg-success">8</span>
                 </i>
                 <button class="no-bg-button">
                   <i class="fa fa-sign-out" aria-hidden="true"></i>
@@ -109,7 +109,7 @@
                       <h3>Inbox(16) 
                           <!-- input search -->
                         <div class="input-group custom-input pull-right">
-                          <input type="text" class="form-control" placeholder="Search this blog">
+                          <input type="text" class="form-control" placeholder="Search email">
                           <div class="input-group-append">
                             <button class="btn btn-secondary" type="button">
                               <i class="fa fa-search"></i>
@@ -117,6 +117,16 @@
                           </div>
                         </div>
                     </h3>
+                      <div class="col no-padding mt-3">
+                        <button class="btn btn-outline-secondary"><i class="fa fa-refresh" aria-hidden="true"></i> Refresh</button> 
+                        <button class="btn btn-outline-secondary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                        <button class="btn btn-outline-secondary"><i class="fa fa-exclamation" aria-hidden="true"></i></button>
+                        <button class="btn btn-outline-secondary"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                        <span class="pull-right">
+                            <button class="btn btn-outline-secondary"><i class="fa fa-angle-left" aria-hidden="true"></i></button>
+                            <button class="btn btn-outline-secondary"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
+                        </span>
+                      </div>
                     <!-- mailbox container -->
                       <table id="mailboxcContaner" class="table table-bordered">
                       </table>

@@ -66,6 +66,9 @@ a[data-toggle="collapse"] {
 .left-menu-list i{padding:15px 0}
 .left-menu-list li{cursor: pointer;border-left:4px solid #2f4050}
 .left-menu-list li.active,.left-menu-list li:hover{border-left:4px solid #19aa8d;background: #293846}
+.position-relative{position: relative;}
+.top-icon{padding-right:8px}
+.top-icon-badge{position: absolute;top:-11px;right:-2px;color:#fff;font-size:12px}
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
