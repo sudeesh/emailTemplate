@@ -7,12 +7,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../styles/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../styles/main.css" />
+    <link rel="stylesheet" media="screen" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-Button trigger modal
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-    Launch demo modal
-  </button>
+<!-- container wrapper -->
+
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+       <!-- logo -->
+       <div class="logo">
+          logo
+       </div>
+       <div class="menu-list">
+          Menu list
+       </div>
+    </nav>
+    <!-- sidebar -->
+    <!-- Page Content  -->
+    <div id="content">
+      <!-- header -->
+      <header class="header-container">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-4 ">
+                <button type="button" id="sidebarCollapse" class="btn btn-info">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <span>Search for something here...</span>
+            </div>
+            <div class="col-md-8 text-right">
+                <i class="fa fa-envelope" aria-hidden="true">
+                    <span class="badge badge-light">4</span>
+                </i>
+                <i class="fa fa-bell" aria-hidden="true">
+                    <span class="badge badge-light">4</span>
+                </i>
+                <button class="no-bg-button">
+                  <i class="fa fa-sign-out" aria-hidden="true"></i>
+                  Log out
+                </button>
+            </div>
+          </div> 
+        </div>
+        </header>
+            <div class="container-fluid">
+              
+
+                <!-- main content -->
+                <section class="main-content">
+                  <div class="row">
+                    <div class="col-md-3">
+                        <button type="button" class="btn btn-primary full-container-width mb-3" data-toggle="modal" data-target="#exampleModalCenter">
+                            Compose Mail
+                          </button>
+                          <h5 class="mb-2">FOLDERS</h5>
+                          <ul class="list-unstyled">
+                            <li><i class="fa fa-inbox" aria-hidden="true"></i> inbox</li>
+                            <li><i class="fa fa-envelope-o" aria-hidden="true"></i> Send Mail</li>
+                            <li> <i class="fa fa-certificate" aria-hidden="true"></i> Important</li>
+                            <li><i class="fa fa-file" aria-hidden="true"></i> Drafts</li>
+                            <li><i class="fa fa-trash-o" aria-hidden="true"></i> Trash</li>
+                          </ul>
+                          <h5 class="mb-2">CATEGORIES</h5>
+                          <ul class="list-unstyled">
+                            <li><i class="pointer-circle"></i> Work</li>
+                            <li><i class="pointer-circle"></i> Documents</li>
+                            <li><i class="pointer-circle"></i> Social</li>
+                            <li><i class="pointer-circle"></i> Advertising</li>
+                            <li><i class="pointer-circle"></i> Clients</li>
+                          </ul>
+                          <h5 class="mb-2">Labels</h5>
+                          <div class="badge-container">
+                              <span class="badge tag"><i class="fa fa-tag" aria-hidden="true"></i> Family</span>
+                              <span class="badge tag"><i class="fa fa-tag" aria-hidden="true"></i> Work</span>
+                              <span class="badge tag"><i class="fa fa-tag" aria-hidden="true"></i> Home</span>
+                              <span class="badge tag"><i class="fa fa-tag" aria-hidden="true"></i> Children</span>
+                              <span class="badge tag"><i class="fa fa-tag" aria-hidden="true"></i> Holidays</span>
+                              <span class="badge tag"><i class="fa fa-tag" aria-hidden="true"></i> Music</span>
+                              <span class="badge tag"><i class="fa fa-tag" aria-hidden="true"></i> Photography</span>
+                              <span class="badge tag"><i class="fa fa-tag" aria-hidden="true"></i> Film</span>
+                          </div>
+                          
+                    </div>
+                    <div class="col-md-9 inbox-container">
+                      <h2>Inbox(16) 
+                          <input class="form-control form-control-borderless" type="search" placeholder="Search topics or keywords">
+                    </h2>
+                    <!-- mailbox container -->
+                      <table id="mailboxcContaner">
+                      </table>
+                    </div>
+                  </div>
+                </section>
+            </div>
+    </div>
+</div>
+
   
   <!-- Modal -->
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -83,7 +174,25 @@ Button trigger modal
 
       localStorage.setItem('storedEmails', JSON.stringify(storedEmails))
       console.log('getall==>', localStorage.getItem('storedEmails'));
+      for(i=0;i<storedEmails.length;i++){
+        var row = $('<tr>'+
+      '<td>'+storedEmails[i].to+'</td>'+
+      '<td>'+storedEmails[i].cc+'</td>'+
+      '<td>'+storedEmails[i].subject+'</td>'+
+      '<td>'+storedEmails[i].body+'</td>'+
+      '</tr>'); 
+      $('#mailboxcContaner').append(row);
+ 
+      }
     }
+
+    $(document).ready(function () {
+
+$('#sidebarCollapse').on('click', function () {
+    $('#sidebar').toggleClass('active');
+});
+
+});
   </script>
 </body>
 </html>
